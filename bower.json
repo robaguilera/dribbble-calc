@@ -1,0 +1,21 @@
+{
+  "name": "robs-starter-kit",
+  "version": "1.0.0",
+  "authors": [
+    "Robert Aguilera <robertaguilerajr@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.7",
+    "normalize-scss": "~3.0.2",
+    "jquery": "~3.1.1"
+  },
+  "devDependencies": {}
+}

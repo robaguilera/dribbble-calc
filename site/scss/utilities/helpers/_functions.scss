@@ -1,0 +1,32 @@
+// Functions
+// ---------
+// General functions for projects
+// ==========
+
+/**
+ * px to em conversion
+ * @link http://www.pjmccormick.com/sweet-sass-function-convert-px-em
+ * @requires {variable} $base-font-size
+ * @param {number} $target - size to convert
+ * @param {number} $context ($base-font-size) - context conversion is based on
+ * @example scss
+ * .foobar { padding-bottom: em(30); }
+ * @returns {number}
+ */
+
+@function em($target, $context: $base-font-size) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+}
+
+// Rem [Function]
+// --------------
+// Converts pixels to rem with $base-font-size
+// or any other font size
+// - https://gist.github.com/ijy/1441967
+@function rem($target, $context: $base-font-size) {
+  @if $target == 0 {
+    @return 0;
+  }
+  @return $target / $context + 0rem;
+}
