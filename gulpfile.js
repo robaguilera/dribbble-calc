@@ -10,9 +10,13 @@ var gulp = require('gulp'),
 
 gulp.task('babelify', function() {
   log('Babelifying and bundling your javascript');
-  return browserify('./site/js/index.js') 
+  return browserify('./site/js/index.js')
     .transform("babelify", {presets: ["es2015"]})
     .bundle()
+    .on('error', function (err) {
+      console.log(err.toString());
+      this.emit("end");
+    })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./site/dist/'))
     .pipe(browserSync.reload({
@@ -41,7 +45,7 @@ gulp.task('styles', ['clean-styles'], function() {
 
 gulp.task('serve', ['styles', 'babelify'], function() {
   browserSync.init({
-    server: './site/' 
+    server: './site/'
   });
   gulp.watch('./site/scss/**/*.scss', ['styles']);
   gulp.watch('./site/js/**/*.js', ['babelify']);

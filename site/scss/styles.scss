@@ -1,6 +1,212 @@
-@import "utilities/index";
-@import "base/index";
-@import "atoms/index";
-@import "organisms/index";
-@import "templates/index";
-@import "shame";
+@import "normalize";
+@import "../bower_components/font-awesome/scss/font-awesome";
+
+// colors
+$bg        : #240F34;
+$ui-bg     : #311C34;
+$ui-alt-bg : #24192D;
+$display   : #21182A;
+$inactive  : #292032;
+$accent    : #FF2D64;
+$text      : #FFF;
+$border    : #2C2136;
+
+// some resets
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: thin;
+    transition: background 200ms ease-in-out;
+}
+
+// base styles
+body {
+    background: $bg;
+    font-size: 16px;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+
+// button styles
+.btn-action {
+    background: $accent;
+    color: $text;
+    font-weight: 500;
+}
+
+.btn-transparent {
+    color: $text;
+    // to align the icon
+    display: flex;
+    align-items: center;
+    i {
+        color: $accent;
+        font-size: 18px;
+    }
+}
+
+.btn-inactive {
+    background: $inactive;
+    color: $text;
+    opacity: .6;
+    font-weight: 300;
+    &:hover {
+        background: $accent;
+        opacity: 1;
+    }
+}
+
+// typography
+.time-font {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.workout-clock {
+    width: 350px;
+    margin: 6rem auto;
+    height: 400px;
+    border-radius: 8px;
+}
+
+header {
+    padding: 30px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: $ui-bg;
+    color: $text;
+    display: flex;
+}
+
+.header-item {
+    flex: 1 1 33%;
+    &.-center {
+        text-align: center;
+        h3 {
+            font-weight: 100;
+            opacity: .6;
+        }
+    }
+    &.-right {
+        text-align: right;
+    }
+}
+
+.clock-display {
+    background: $display;
+    color: $text;
+    padding: 45px 0;
+    text-align: center;
+}
+
+.time {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.current-time {
+    display: inline-block;
+    h2 {
+        font-size: 50px;
+        letter-spacing: 3px;
+    }
+}
+
+.previous-set {
+    margin-top: 20px;
+    margin-right: 9px;
+    span {
+        opacity: .7;
+        font-weight: 300;
+    }
+}
+
+#previous-time {
+    color: $accent;
+    font-size: 18px;
+    margin-left: 3px;
+    opacity: 1;
+}
+
+.previous-set {
+    text-align: right;
+}
+
+.clock-controls {
+    background: $ui-alt-bg;
+}
+
+.control-row {
+    width: 90%;
+    margin: 0 auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border;
+}
+
+.action-text {
+    opacity: .6;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $text;
+    margin: 0 12px;
+    font-size: 24px;
+}
+
+.total-count {
+    margin-left: auto;
+    letter-spacing: 3px;
+    font-size: 32px;
+    color: $text;
+    opacity: .8;
+}
+
+footer {
+    background: $display;
+    padding: 30px 0 0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.clock-buttons {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    button {
+        flex: 1 0 100px;
+        margin-right: 12px;
+        padding: 15px;
+        border-radius: 4px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    color: $text;
+    font-size: 22px;
+    margin-top: 25px;
+    li {
+        font-weight: 300;
+        flex: 1 0 auto;
+        align-self: center;
+        padding-bottom: 15px;
+        margin: 0 15px;
+        &.active {
+            border-bottom: 3px solid $accent;
+        }
+    }
+}

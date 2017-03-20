@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Robert Aguilera</title>
-  <link rel="stylesheet" href="dist/styles.css">
-</head>
-<body>
-  <h2>Yes</h2>
 
-<script src="dist/bundle.js"></script>  
+<head>
+    <meta charset="UTF-8">
+    <title>Robert Aguilera</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Lato:100, 300, 400" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+
+<body>
+    <div class="workout-clock">
+        <header>
+            <div class="header-item -left">
+                <i class="fa fa-fw fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="header-item -center">
+                <h3>Time Track</h3>
+            </div>
+            <div class="header-item -right">
+                <div class="i fa fa-fw fa-clock-o"></div>
+            </div>
+        </header>
+        <div class="clock-display">
+            <div class="time">
+                <div class="current-time">
+                    <h2 class="time-font">
+                        <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span>
+                    </h2>
+                </div>
+                <div class="previous-set">
+                    <span>Previous Set: </span>
+                    <span id="previous-time" class="time-font">
+                        <span class="pv-hour">00</span>:<span class="pv-min">00</span>:<span class="pv-sec">00</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="clock-controls">
+            <div class="control-row">
+                <button class="btn-transparent" id="js-increment-exercise">
+                    <i class="fa fa-fw fa-plus"></i>
+                </button>
+                <span class="action-text">Exercise</span>
+                <button class="btn-transparent" id="js-decrement-exercise">
+                    <i class="fa fa-fw fa-minus"></i>
+                </button>
+                <span id="exercise-total" class="total-count">0</span>
+            </div>
+            <div class="control-row">
+                <button class="btn-transparent" id="js-increment-set">
+                    <i class="fa fa-fw fa-plus"></i>
+                </button>
+                <span class="action-text">Set</span>
+                <button class="btn-transparent" id="js-decrement-set">
+                    <i class="fa fa-fw fa-minus"></i>
+                </button>
+                <span id="set-total" class="total-count">0</span>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-inner">
+                <div class="clock-buttons">
+                    <button id="js-start-clock" class="btn-action">Start</button>
+                    <button id="js-stop-clock" class="btn-inactive">Stop</button>
+                </div>
+                <ul class="menu">
+                    <li class="fa fw fa-line-chart" aria-hidden="true"></li>
+                    <li class="fa fw fa-heart-o" aria-hidden="true"></li>
+                    <li class="fa fw fa-bell-o active" aria-hidden="true"></li>
+                    <li class="fa fw fa-cutlery" aria-hidden="true"></li>
+                    <li class="fa fw fa-bullseye" aria-hidden="true"></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="dist/bundle.js"></script>
 </body>
+
 </html>
